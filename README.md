@@ -1,4 +1,4 @@
-# SSOverlays
+# Slipstream Overlays
 
 A handful of useful overlays for Slipstream: Rogue Space. Currently requires the SlipInfo mod to retrieve data from the game.
 

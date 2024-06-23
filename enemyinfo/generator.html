@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Enemy Ship Info Overlay Generator</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <script src="../js/generator.js"></script>
+</head>
+
+<body>
+    <div>
+        <h1>Enemy Ship Info Overlay</h1>
+        <form id="generator">
+            <label for="ip">IP:</label>
+            <input type="text" id="ip" name="ip" value="127.0.0.1" required>
+
+            <br />
+
+            <label for="port">Port:</label>
+            <input type="number" id="port" name="port" value="8001" required>
+
+            <br />
+
+            <label for="provider">Connection Method:</label>
+            <select id="provider" name="provider" required>
+                <option value="slipinfo">SlipInfo</option>
+                <option value="example">Example Data</option>
+            </select>
+
+            <br />
+
+            <label for="prefix">Prefix:</label>
+            <input type="text" id="prefix" name="prefix" value="slipinfo" required>
+
+            <br />
+
+            <label for="health">Health:</label>
+            <select id="health" name="health">
+                <option value="number">Number</option>
+                <option value="percentage">Percentage</option>
+                <option value="hide">Hide</option>
+            </select>
+
+            <br />
+
+            <label for="name">Name:</label>
+            <input type="checkbox" id="name" name="name" checked>
+
+            <br />
+
+            <label for="intel">Intel:</label>
+            <input type="checkbox" id="intel" name="intel" checked>
+
+            <br />
+
+            <label for="invaders">Invaders:</label>
+            <input type="checkbox" id="invaders" name="invaders" checked>
+
+            <br />
+
+            <label for="threat">Threat Level:</label>
+            <input type="checkbox" id="threat" name="threat" checked>
+
+            <br />
+
+            <label for="cargo">Cargo Level:</label>
+            <input type="checkbox" id="cargo" name="cargo" checked>
+
+            <br />
+
+            <label for="speed">Speed Level:</label>
+            <input type="checkbox" id="speed" name="speed" checked>
+
+            <br />
+
+            <label for="font">Font:</label>
+            <input type="text" id="font" name="font" value="Arial">
+
+            <br />
+
+            <label for="size">Text Size:</label>
+            <input type="number" id="size" name="size" value="20">
+
+            <br />
+
+            <label for="color">Text Color:</label>
+            <input type="color" id="color" name="color" value="#000000">
+
+            <br />
+
+            <label for="updateRate">Update Rate: (ms)</label>
+            <input type="number" id="updateRate" name="updateRate" value="1000">
+
+            <br />
+
+            <label for="onerror">If the overlay cannot connect:</label>
+            <select id="onerror" name="onerror">
+                <option value="hide">Hide Overlay Completely</option>
+                <option value="show">Do nothing</option>
+            </select>
+
+        </form>
+
+        <br />
+
+        <button onclick="generate()">Generate</button>
+
+        <br />
+
+        <button id="copyButton" onclick="copy()">Copy Url</button>
+
+        <code id="generatedURL"></code>
+
+        <br />
+
+        <br />
+
+        <iframe id="preview" src="about:blank"></iframe>
+
+        <br />
+
+        <a href="../index.html">Back to Overlay List</a>
+
+
+    </div>

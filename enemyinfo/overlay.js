@@ -30,7 +30,11 @@ function updateOverlay(updateData) {
             healthText.style.fontFamily = settings.font;
             healthText.style.fontSize = `${settings.size}px`;
             healthText.style.color = `#${settings.color}`;
-            healthText.innerText = shipInfo ? `${shipInfo.currentHealth - shipInfo.minHealth} / ${shipInfo.maxHealth - shipInfo.minHealth}` : healthText.innerText;
+            // cut the decimal places off of the health numbers
+            shipInfo.currentHealth = Math.floor(shipInfo.currentHealth);
+            shipInfo.maxHealth = Math.floor(shipInfo.maxHealth);
+
+            healthText.innerText = shipInfo ? `${shipInfo.currentHealth - shipInfo.minHealth} / ${shipInfo.maxHealth - shipInfo.minHealth} Health` : healthText.innerText;
             break;
         case 'percentage':
             health.style.display = 'block';
@@ -38,7 +42,7 @@ function updateOverlay(updateData) {
             healthText.style.fontFamily = settings.font;
             healthText.style.fontSize = `${settings.size}px`;
             healthText.style.color = `#${settings.color}`;
-            healthText.innerText = shipInfo ? `${Math.round((shipInfo.currentHealth - shipInfo.minHealth) / (shipInfo.maxHealth - shipInfo.minHealth) * 100)}%` : healthText.innerText;
+            healthText.innerText = shipInfo ? `${Math.round((shipInfo.currentHealth - shipInfo.minHealth) / (shipInfo.maxHealth - shipInfo.minHealth) * 100)}% Health` : healthText.innerText;
             break;
         case 'hide':
             health.style.display = 'none';

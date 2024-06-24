@@ -102,7 +102,7 @@ function updateOverlay(updateData) {
 
     var croc = document.getElementById('croc');
     var crocText = document.getElementById('croc-text');
-    var crocCount = crewList.filter(crew => crew.archetype === 'crocodile').length;
+    var crocCount = crewList.filter(crew => crew.archetype === 'croc').length;
     updateLI(croc, crocText, "Croc", crocCount, crewList.length);
 
     crewLiList.push({

@@ -62,7 +62,7 @@ async function pingGame() {
         } else if (!newEnemyInfo.enemyShip) {
             setError(true);
             console.error(`Failed to resolve enemy info: ${newEnemyInfo.error}`);
-            return;
+            newEnemyInfo.enemyShip = null; // Mark no enemy
         }
 
 

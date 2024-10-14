@@ -150,6 +150,19 @@ function updateOverlay(updateData) {
         name: 'turtle'
     });
 
+    // Koala
+
+    var koala = document.getElementById('koala');
+    var koalaText = document.getElementById('koala-text');
+    var koalaCount = crewList.filter(crew => crew.archetype === 'koala').length;
+    updateLI(koala, koalaText, "Koala", koalaCount, crewList.length);
+
+    crewLiList.push({
+        li: koala,
+        count: koalaCount,
+        name: 'koala'
+    });
+
     // Sort the crew list based on the settings
     var crewListElement = document.getElementById('crew-list');
     crewListElement.innerHTML = '';

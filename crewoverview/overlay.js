@@ -23,6 +23,10 @@ function updateLI(li, liText, name, number, total) {
         liText.style.fontSize = `${settings.size}px`;
         liText.style.color = `#${settings.color}`;
 
+        if (settings.outline) {
+            liText.style.webkitTextStroke = `${settings.outlineSize}px #${settings.outlineColor}`;
+        }
+
         switch (settings.label) {
             case 'percent':
                 liText.innerText = `${name}: ${Math.round((number / total) * 100)}%`;
@@ -64,6 +68,11 @@ function updateOverlay(updateData) {
         totalCrewText.style.fontFamily = settings.font;
         totalCrewText.style.fontSize = `${settings.size}px`;
         totalCrewText.style.color = `#${settings.color}`;
+
+        if (settings.outline) {
+            totalCrewText.style.webkitTextStroke = `${settings.outlineSize}px #${settings.outlineColor}`;
+        }
+
         totalCrewText.innerText = crewList ? `Total Crew: ${crewList.length}` : totalCrewText.innerText;
     } else {
         totalCrew.style.display = 'none';

@@ -92,6 +92,9 @@ export function init(updateFunction) {
     // Set the reset of the parameters as settings
     settings = params;
 
+    // Convert boolean settings to correct type
+    settings.outline = settings.outline === "true" || settings.outline === true;
+
     update(); // Defined in overlay.html for the specific overlay
 }
 

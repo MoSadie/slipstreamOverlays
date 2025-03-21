@@ -30,6 +30,11 @@ function updateOverlay(updateData) {
             healthText.style.fontFamily = settings.font;
             healthText.style.fontSize = `${settings.size}px`;
             healthText.style.color = `#${settings.color}`;
+
+            if (settings.outline) {
+                healthText.style.webkitTextStroke = `${settings.outlineSize}px #${settings.outlineColor}`;
+            }
+
             // cut the decimal places off of the health numbers
             shipInfo.currentHealth = Math.floor(shipInfo.currentHealth);
             shipInfo.maxHealth = Math.floor(shipInfo.maxHealth);
@@ -42,6 +47,11 @@ function updateOverlay(updateData) {
             healthText.style.fontFamily = settings.font;
             healthText.style.fontSize = `${settings.size}px`;
             healthText.style.color = `#${settings.color}`;
+
+            if (settings.outline) {
+                healthText.style.webkitTextStroke = `${settings.outlineSize}px #${settings.outlineColor}`;
+            }
+
             healthText.innerText = shipInfo ? `${Math.round((shipInfo.currentHealth - shipInfo.minHealth) / (shipInfo.maxHealth - shipInfo.minHealth) * 100)}% Health` : healthText.innerText;
             break;
         case 'hide':
@@ -63,6 +73,11 @@ function updateOverlay(updateData) {
         nameText.style.fontFamily = settings.font;
         nameText.style.fontSize = `${settings.size}px`;
         nameText.style.color = `#${settings.color}`;
+
+        if (settings.outline) {
+            nameText.style.webkitTextStroke = `${settings.outlineSize}px #${settings.outlineColor}`;
+        }
+
         nameText.innerText = shipInfo ? shipInfo.name : nameText.innerText;
     } else {
         name.style.display = 'none';
@@ -82,6 +97,11 @@ function updateOverlay(updateData) {
         intelText.style.fontFamily = settings.font;
         intelText.style.fontSize = `${settings.size}px`;
         intelText.style.color = `#${settings.color}`;
+
+        if (settings.outline) {
+            intelText.style.webkitTextStroke = `${settings.outlineSize}px #${settings.outlineColor}`;
+        }
+
         intelText.innerText = shipInfo ? `${shipInfo.intel}` : intelText.innerText;
     } else {
         intel.style.display = 'none';
@@ -101,6 +121,11 @@ function updateOverlay(updateData) {
         invaderText.style.fontFamily = settings.font;
         invaderText.style.fontSize = `${settings.size}px`;
         invaderText.style.color = `#${settings.color}`;
+
+        if (settings.outline) {
+            invaderText.style.webkitTextStroke = `${settings.outlineSize}px #${settings.outlineColor}`;
+        }
+
         invaderText.innerText = shipInfo ? `${shipInfo.invaders}` : invaderText.innerText;
     } else {
         invader.style.display = 'none';
@@ -120,6 +145,11 @@ function updateOverlay(updateData) {
         threatText.style.fontFamily = settings.font;
         threatText.style.fontSize = `${settings.size}px`;
         threatText.style.color = `#${settings.color}`;
+
+        if (settings.outline) {
+            threatText.style.webkitTextStroke = `${settings.outlineSize}px #${settings.outlineColor}`;
+        }
+
         threatText.innerText = shipInfo ? `Threat: ${shipInfo.threatLevel}` : threatText.innerText;
     } else {
         threat.style.display = 'none';
@@ -139,6 +169,11 @@ function updateOverlay(updateData) {
         cargoText.style.fontFamily = settings.font;
         cargoText.style.fontSize = `${settings.size}px`;
         cargoText.style.color = `#${settings.color}`;
+
+        if (settings.outline) {
+            cargoText.style.webkitTextStroke = `${settings.outlineSize}px #${settings.outlineColor}`;
+        }
+
         cargoText.innerText = shipInfo ? `Cargo: ${shipInfo.cargoLevel}` : cargoText.innerText;
     } else {
         cargo.style.display = 'none';
@@ -158,6 +193,11 @@ function updateOverlay(updateData) {
         speedText.style.fontFamily = settings.font;
         speedText.style.fontSize = `${settings.size}px`;
         speedText.style.color = `#${settings.color}`;
+
+        if (settings.outline) {
+            speedText.style.webkitTextStroke = `${settings.outlineSize}px #${settings.outlineColor}`;
+        }
+
         speedText.innerText = shipInfo ? `Speed: ${shipInfo.speedLevel}` : speedText.innerText;
     } else {
         speed.style.display = 'none';

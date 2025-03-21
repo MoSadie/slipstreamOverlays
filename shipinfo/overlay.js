@@ -20,6 +20,11 @@ function updateOverlay(updateData) {
             healthText.style.fontFamily = settings.font;
             healthText.style.fontSize = `${settings.size}px`;
             healthText.style.color = `#${settings.color}`;
+
+            if (settings.outline) {
+                healthText.style.webkitTextStroke = `${settings.outlineSize}px #${settings.outlineColor}`;
+            }
+
             // cut the decimal places off of the health numbers
             shipInfo.currentHealth = Math.floor(shipInfo.currentHealth);
             shipInfo.maxHealth = Math.floor(shipInfo.maxHealth);
@@ -32,6 +37,11 @@ function updateOverlay(updateData) {
             healthText.style.fontFamily = settings.font;
             healthText.style.fontSize = `${settings.size}px`;
             healthText.style.color = `#${settings.color}`;
+
+            if (settings.outline) {
+                healthText.style.webkitTextStroke = `${settings.outlineSize}px #${settings.outlineColor}`;
+            }
+
             healthText.innerText = shipInfo ? `${Math.round((shipInfo.currentHealth - shipInfo.minHealth) / (shipInfo.maxHealth - shipInfo.minHealth) * 100)}% Health` : healthText.innerText;
             break;
         case 'hide':
@@ -53,6 +63,11 @@ function updateOverlay(updateData) {
         fuelText.style.fontFamily = settings.font;
         fuelText.style.fontSize = `${settings.size}px`;
         fuelText.style.color = `#${settings.color}`;
+
+        if (settings.outline) {
+            fuelText.style.webkitTextStroke = `${settings.outlineSize}px #${settings.outlineColor}`;
+        }
+
         fuelText.innerText = shipInfo ? `${shipInfo.currentFuel}/${shipInfo.maxFuel} Fuel` : fuelText.innerText;
     } else {
         fuel.style.display = 'none';
@@ -72,6 +87,11 @@ function updateOverlay(updateData) {
         salvageText.style.fontFamily = settings.font;
         salvageText.style.fontSize = `${settings.size}px`;
         salvageText.style.color = `#${settings.color}`;
+
+        if (settings.outline) {
+            salvageText.style.webkitTextStroke = `${settings.outlineSize}px #${settings.outlineColor}`;
+        }
+
         salvageText.innerText = shipInfo ? `${shipInfo.currentSalvage} Salvage` : salvageText.innerText;
     } else {
         salvage.style.display = 'none';
@@ -91,6 +111,11 @@ function updateOverlay(updateData) {
         gemsText.style.fontFamily = settings.font;
         gemsText.style.fontSize = `${settings.size}px`;
         gemsText.style.color = `#${settings.color}`;
+
+        if (settings.outline) {
+            gemsText.style.webkitTextStroke = `${settings.outlineSize}px #${settings.outlineColor}`;
+        }
+
         gemsText.innerText = shipInfo ? `${shipInfo.currentGems} Gems` : gemsText.innerText;
     } else {
         gems.style.display = 'none';
